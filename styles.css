@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "nav nav nav nav nav nav"
+    "header header header header header header"
+    "about about about info info info"
+    "img img img img img img"
+    "card card card card card card"
+    "footer footer footer footer footer footer";
+  /* gap: 10px; */
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.logo {
+  width: 150px;
+  margin-top: 5px;
+}
+
+.humburger {
+  display: none;
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style-type: none;
+}
+.nav-bar ul li a {
+  display: block;
+  margin-right: 3rem;
+  font-weight: bold;
+  outline: none;
+  text-decoration: none;
+  font-size: 1rem;
+  list-style: none;
+  color: rgb(255, 255, 255);
+  transition: 0.2s;
+  padding: 10px 10px;
+}
+
+header {
+  grid-area: header;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.693)),
+    url(image/header-img.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  text-align: center;
+  background-attachment: fixed;
+}
+figure {
+  position: relative;
+  grid-area: img;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.542), rgba(0, 0, 0, 0.693)),
+    url(image/img-2.jpg);
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+figure h1 {
+  position: absolute;
+  top: 48%;
+  left: 38%;
+  color: #fefefe;
+  font-size: 400%;
+}
+.flag {
+  width: 30%;
+  border: #fefefe solid 5px;
+  border-radius: 25%;
+  opacity: 0.5;
+  margin-top: 15px;
+}
+
+.about {
+  grid-area: about;
+  padding: 30px;
+
+  background-size: cover;
+  background-position: center;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.36);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.8px);
+  -webkit-backdrop-filter: blur(2.8px);
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  padding: 10px;
+}
+.glass p {
+  margin-top: 20px;
+  text-align: justify;
+}
+
+.cards {
+  grid-area: card;
+  width: 100%;
+  display: flex;
+  padding: 50px;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+}
+.crew {
+  position: absolute;
+  left: 43%;
+}
+.crew h1 {
+  margin-left: 45%;
+  font-size: 300%;
+}
+.card {
+  margin-top: 8%;
+  width: 23%;
+  border-radius: 1rem;
+  border: 2px solid rgb(167, 167, 167);
+  padding: 1rem;
+  padding-bottom: 3%;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.card-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.card-img img {
+  width: 100%;
+}
+.card-text {
+  text-align: center;
+}
+.card-text span {
+  display: block;
+  margin-bottom: 5px;
+}
+.card-button {
+  position: absolute;
+  width: 100%;
+  bottom: -50px;
+  left: 0;
+  text-align: center;
+  padding: 0.5rem;
+  /* background-color: rgb(7, 157, 132); */
+  background-image: url(image/low-poly-grid-haikei.svg);
+  color: rgb(255, 247, 247);
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.card:hover .card-button {
+  bottom: 0;
+}
+
+.card-button a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+footer {
+  text-align: center;
+  background-image: url(image/low-poly-grid-haikei.svg);
+  padding-top: 20px;
+  color: #fefefe;
+  height: 60px;
+}
+
+.info {
+  grid-area: info;
+  padding: 30px;
+
+  background-size: cover;
+  background-position: center;
+}
+footer {
+  grid-area: footer;
+}
+
+@media only screen and (max-width: 900px) {
+  .humburger {
+    display: block;
+    cursor: pointer;
+  }
+  nav {
+    padding: 0 10px;
+  }
+
+  .humburger .line {
+    width: 30px;
+    height: 3px;
+    background: #000;
+    margin: 6px 0;
+  }
+  .flag {
+    margin-top: 15%;
+    width: 300px;
+  }
+  .nav-bar {
+    height: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-image: url(image/low-poly-grid-haikei.svg);
+    transition: 0.2s;
+    overflow: hidden;
+  }
+  .nav-bar.active {
+    height: 400px;
+    width: 100%;
+  }
+  .nav-bar.active ul {
+    opacity: 1;
+  }
+  .nav-bar ul {
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+  }
+
+  .nav-bar ul li a {
+    margin-bottom: 12px;
+    color: rgb(255, 255, 255);
+    font-size: 150%;
+  }
+  footer {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  footer {
+    font-size: 60%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  footer {
+    font-size: 40%;
+  }
+}
